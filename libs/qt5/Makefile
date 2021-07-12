@@ -43,7 +43,7 @@ define Package/qt5/Default
   SUBMENU:=Qt5
   TITLE:=qt5
   URL:=http://qt-project.org
-  DEPENDS:=+librt +zlib +libstdcpp +libpcre16 +libpthread +libatomic +libmysqlclient @!LINUX_2_6
+  DEPENDS:=+librt +zlib +libstdcpp +libpcre16 +libpthread +libatomic @!LINUX_2_6
 endef
 
 define Package/qt5-core
@@ -159,8 +159,6 @@ define Build/Configure
 			-skip qtconnectivity \
 			-skip wayland \
 			-skip qtscript \
-			-sql-mysql \
-			-I$(STAGING_DIR)/usr/include/mysql \
 			-L$(STAGING_DIR)/usr/lib \
 			-v \
 	)
